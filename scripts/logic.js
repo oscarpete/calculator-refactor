@@ -17,7 +17,13 @@ const doMathTests = [
   { name: 'invalid - 2', args: ['book', 0, 0], expected: 'invalid operation' },
   { name: 'invalid - 3', args: ['minus', 0, 0], expected: 'invalid operation' },
   // write 7 more test cases for doMath
-
+  { name: 'div - 1', args: ['div', 5, 2], expected: 2.5 },
+  { name: 'mul - 2', args: ['mul', 9, 8], expected: 72 },
+  { name: 'add - 3', args: ['add', 1, 0], expected: 1 },
+  { name: 'mul - 1', args: ['min', 3, 8], expected: -5 },
+  { name: 'invalid - 2', args: ['hi', 0, 0], expected: 'invalid operation' },
+  { name: 'invalid - 3', args: ['candy', 0, 0], expected: 'invalid operation' },
+  { name: 'invalid - 1', args: ['bird', 0, 0], expected: 'invalid operation' },
 ];
 
 // refactor the logic from the calculator tutorial into this function
@@ -35,7 +41,23 @@ function doMath(operation, a, b) {
   }
   // write your code below this comment:
 
-
+  let response;
+  if (isNaN(a) || isNaN(b)) {
+    response = 'invalid operation';
+  }
+  else if (operation === 'add') {
+    response = a+b;
+} else if (operation === "min") {
+  response = a-b;
+} else if (operation === "div") {
+  response = a/b;
+} else if (operation === "mul") {
+  response = a*b;
+}
+else {
+  response = 'invalid operation';
+}
+return response;
 
 }
 
