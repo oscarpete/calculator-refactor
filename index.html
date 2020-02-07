@@ -6,24 +6,33 @@
   <script src='./dependencies/evaluation.js'></script>
   <!-- this is the testing function for your logic -->
   <script src='./dependencies/testing.js'></script>
-
+     <!-- this is the handler -->
+     <script src="./scripts/handler.js"></script>
+     <!-- this is the logic -->
+     <script src="./scripts/logic.js"></script>
+     <link rel="stylesheet" href="style.css"/>
+    
 </head>
 
 <body>
 <form>
-  value 1: <input type="text" id="value1">
+  <div class="calcu"> value 1: <input type="number" id="value1"> </div>
   
+  <div class="operabox">
   Operator:
-  <select name="" id="operator">
-    <option>What you want to do?</option>
+  <select  id="operator">
+   <option>What you want to do?</option> 
     <option value="add">Add</option>
     <option value="min">Minus</option>
     <option value="div">Divide</option>
     <option value="mul">Multiply</option>
   </select>
-  value 2: <input type="text" id="value2">
-  <button type="button">Calculate</button>
+</div>
+<div class="calcu2"> value 2: <input type="number" id="value2"> </div>
+<button id="botonHacer" type="button"> Calculate</button>   <!--onclick="calc()"-->
 </form>
+<div id="results"></div>
+ <!-- this is the listener -->
+ <script src="./scripts/listener.js"></script>
 </body>
-<script src="main.js"></script>
 </html>
